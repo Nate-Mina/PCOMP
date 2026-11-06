@@ -1,0 +1,6 @@
+{
+  "summary": "Architectural plan to overhaul Pure Computers into a clean, modern Jekyll project visually identical to purecomp.net. Replaces obfuscated Google Sites markup with semantic Jekyll templates, establishes a dark theme with gold accents, converts pages into clean Markdown/HTML with front matter, implements responsive service cards and navigation, and integrates a working consultation/estimate form.",
+  "updatedAt": "2026-11-06T19:15:10.468686677Z",
+  "requestFeedback": true,
+  "userFacing": true
+}

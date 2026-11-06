@@ -1,0 +1,62 @@
+<script>
+  // Pure Computers Interactive Scripts
+  document.addEventListener('DOMContentLoaded', function() {
+    // Mobile Drawer Navigation
+    const mobileMenuOpen = document.getElementById('mobileMenuOpen');
+    const mobileMenuClose = document.getElementById('mobileMenuClose');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const mobileDrawerOverlay = document.getElementById('mobileDrawerOverlay');
+
+    function openMobileMenu() {
+      if (mobileDrawer && mobileDrawerOverlay) {
+        mobileDrawer.classList.add('open');
+        mobileDrawerOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeMobileMenu() {
+      if (mobileDrawer && mobileDrawerOverlay) {
+        mobileDrawer.classList.remove('open');
+        mobileDrawerOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    }
+
+    if (mobileMenuOpen) mobileMenuOpen.addEventListener('click', openMobileMenu);
+    if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMobileMenu);
+    if (mobileDrawerOverlay) mobileDrawerOverlay.addEventListener('click', closeMobileMenu);
+
+    // Close on escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeMobileMenu();
+    });
+
+    // Estimate & Consultation Form Handler
+    const estimateForm = document.getElementById('estimateForm');
+    const formSuccessMsg = document.getElementById('formSuccessMsg');
+
+    if (estimateForm) {
+      estimateForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const submitBtn = estimateForm.querySelector('button[type="submit"]');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = 'Sending...';
+        }
+
+        setTimeout(function() {
+          if (formSuccessMsg) {
+            formSuccessMsg.style.display = 'block';
+            formSuccessMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+          estimateForm.reset();
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'Submit Request';
+          }
+        }, 600);
+      });
+    }
+  });
+</script>

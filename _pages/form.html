@@ -1,0 +1,58 @@
+---
+layout: page
+title: "Consultation & Estimate Form - Pure Computers"
+description: "Request a free computer repair estimate or custom build consultation from Pure Computers."
+permalink: /pages/form.html
+---
+
+<div class="form-card" style="margin-top: 1rem;">
+  <form class="estimate-form" id="estimateForm">
+    <div class="form-group">
+      <label for="fullName" class="form-label">Full Name *</label>
+      <input type="text" id="fullName" name="fullName" class="form-input" placeholder="e.g. Alex Morgan" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email" class="form-label">Email Address *</label>
+      <input type="email" id="email" name="email" class="form-input" placeholder="you@domain.com" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone" class="form-label">Phone Number</label>
+      <input type="tel" id="phone" name="phone" class="form-input" placeholder="(585) 555-0199">
+    </div>
+
+    <div class="form-group">
+      <label for="serviceType" class="form-label">Service Needed *</label>
+      <select id="serviceType" name="serviceType" class="form-select" required>
+        <option value="" disabled selected>Select a service...</option>
+        <option value="custom-pc">New Custom Gaming / Workstation Build</option>
+        <option value="pc-optimization">PC Performance Tuning &amp; Cleanup (5)</option>
+        <option value="hardware-repair">Hardware Diagnostics &amp; Repair</option>
+        <option value="it-networking">Business IT &amp; Networking</option>
+        <option value="ai-tools">AI Tools &amp; Local Workstation</option>
+        <option value="general-consult">General Consultation</option>
+      </select>
+    </div>
+
+    <div class="form-group full-width">
+      <label for="budget" class="form-label">Target Budget (if applicable)</label>
+      <input type="text" id="budget" name="budget" class="form-input" placeholder="e.g. 00 - ,500">
+    </div>
+
+    <div class="form-group full-width">
+      <label for="message" class="form-label">Details / Current Hardware / Problem Description *</label>
+      <textarea id="message" name="message" class="form-textarea" placeholder="Describe what you need help with..." required></textarea>
+    </div>
+
+    <div class="form-group full-width" style="margin-top: 0.5rem;">
+      <button type="submit" class="btn-primary" style="width: 100%; padding: 0.85rem; font-size: 1rem;">
+        Submit Request for Free Consultation
+      </button>
+    </div>
+  </form>
+
+  <div class="form-success-msg" id="formSuccessMsg">
+    ✨ <strong>Thank you!</strong> Your request has been received. Our team will contact you shortly!
+  </div>
+</div>

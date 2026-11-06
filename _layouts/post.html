@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<div class="page-container post-container">
+  <header class="page-header">
+    <div class="page-meta" style="margin-bottom: 0.5rem;">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+      {% if page.author %} &bull; <span>{{ page.author }}</span>{% endif %}
+    </div>
+    <h1 class="page-title">{{ page.title }}</h1>
+  </header>
+  <article class="markdown-content">
+    {{ content }}
+  </article>
+  <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between;">
+    <a href="/" class="btn-secondary">&larr; Back to Home</a>
+    <a href="#estimate" class="btn-primary">Get Tech Support</a>
+  </div>
+</div>

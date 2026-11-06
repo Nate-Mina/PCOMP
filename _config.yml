@@ -1,0 +1,60 @@
+# Pure Computers Jekyll Configuration for GitHub Pages
+title: "Pure Computers"
+email: "Furtheraptitudes@gmail.com"
+description: "Pure Computers: Excellent techniques for all your tech needs, custom gaming builds, expert repair services, IT networking solutions, computer sales, repairs, and upgrades."
+url: "https://purecomp.net"
+baseurl: ""
+
+# Build Settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /pages/:name.html
+  posts:
+    output: true
+    permalink: /posts/:year/:month/:day/:title.html
+
+# Front matter defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Plugins supported by GitHub Pages
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Included directories
+include:
+  - _pages
+  - _posts
+
+# Exclude system and development files from Jekyll build
+exclude:
+  - node_modules
+  - package.json
+  - package-lock.json
+  - server.js
+  - metadata.json
+  - .env.example
+  - .gitattributes
+  - Gemfile.lock
+  - README.md
