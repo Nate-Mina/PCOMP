@@ -110,7 +110,7 @@ async function build() {
   console.log('Building Jekyll site to _site/ ...');
 
   // Copy static directories
-  for (const dir of ['assets', 'images', 'scripts', 'styles']) {
+  for (const dir of ['assets', 'images']) {
     const src = path.join(__dirname, dir);
     const dest = path.join(outDir, dir);
     if (fs.existsSync(src)) {

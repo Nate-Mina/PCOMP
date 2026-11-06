@@ -122,23 +122,7 @@ async function renderPageWithLayout(layoutName, pageData, contentBody) {
   return currentContent;
 }
 
-// 1. Google Sites .bin asset mappings
-app.get('/css', (req, res) => {
-  res.setHeader('Content-Type', 'text/css');
-  res.sendFile(path.join(__dirname, 'styles/css.bin'));
-});
-
-app.get('/styles/rs=AGEqA5kFtdIxalAdxeUlPt_E6LUflDdwFw', (req, res) => {
-  res.setHeader('Content-Type', 'text/css');
-  res.sendFile(path.join(__dirname, 'styles/rs-AGEqA5kFtdIxalAdxeUlPt_E6LUflDdwFw.bin'));
-});
-
-app.get('/iframe_api', (req, res) => {
-  res.setHeader('Content-Type', 'application/javascript');
-  res.sendFile(path.join(__dirname, 'scripts/iframe_api.bin'));
-});
-
-// 2. Main router for Jekyll pages, posts, and root (mounted before express.static so HTML templates are rendered with layouts)
+// 1. Main router for Jekyll pages, posts, and root (mounted before express.static so HTML templates are rendered with layouts)
 app.get('*', async (req, res, next) => {
   try {
     let reqPath = req.path;
@@ -184,18 +168,9 @@ app.get('*', async (req, res, next) => {
   }
 });
 
-// 3. Static directory serving (assets, images, scripts, styles, etc.)
+// 2. Static directory serving (assets, images, etc.)
 app.use(express.static(__dirname, {
   index: false,
-  setHeaders: (res, filePath) => {
-    if (filePath.endsWith('.bin')) {
-      if (filePath.includes('styles')) {
-        res.setHeader('Content-Type', 'text/css');
-      } else if (filePath.includes('scripts')) {
-        res.setHeader('Content-Type', 'application/javascript');
-      }
-    }
-  }
 }));
 // Fallback 404
 app.use((req, res) => {
